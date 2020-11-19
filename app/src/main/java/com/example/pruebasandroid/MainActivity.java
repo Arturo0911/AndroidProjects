@@ -9,6 +9,7 @@ import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
 
+    boolean bartShowing = true;
 
     public void fade(View view){
         Log log = null;
@@ -19,8 +20,25 @@ public class MainActivity extends AppCompatActivity {
 
         // el parámetro alpha es utilizado para jugar con la solidifquez del elemento, por así decirlo
         // Los parámetros de setDuration son en milisegundos, por lo que 2000 equivalen a 2 segundos.
-        bartimageView.animate().alpha(0).setDuration(2000);
-        homerImageView.animate().alpha(1).setDuration(2000);
+
+        // ahora creamos una conficional de que si la imagen de Bart se muestra
+        // entonces ocúltala, caso contrario escóndea, viceversa para Homero
+
+        if (bartShowing){
+
+            bartShowing = false;
+
+            bartimageView.animate().alpha(0).setDuration(2000);
+            homerImageView.animate().alpha(1).setDuration(2000);
+        } else{
+
+            bartShowing = true;
+
+            bartimageView.animate().alpha(1).setDuration(2000);
+            homerImageView.animate().alpha(0).setDuration(2000);
+        }
+
+
     }
 
     @Override
