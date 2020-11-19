@@ -7,7 +7,7 @@
     tools:context=".MainActivity">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/bartimageView"
         android:layout_width="407dp"
         android:layout_height="605dp"
         android:onClick="fade"
@@ -17,4 +17,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/bart" />
+
+    <ImageView
+        android:id="@+id/homerimageView"
+        android:layout_width="407dp"
+        android:layout_height="605dp"
+        android:alpha="0"
+        android:onClick="fade"
+        android:scaleType="fitStart"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/homer" />
 </androidx.constraintlayout.widget.ConstraintLayout>
