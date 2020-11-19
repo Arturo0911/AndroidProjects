@@ -13,6 +13,7 @@ public class MainActivity extends AppCompatActivity {
     public void fade(View view){
         Log log = null;
         log.i("Info", "Image view has been taped");
+        // find by view is similar to docuemnt.getElementById xD
         ImageView imageView = (ImageView) findViewById(R.id.imageView);
 
         // el parámetro alpha es utilizado para jugar con la solidifquez del elemento, por así decirlo
