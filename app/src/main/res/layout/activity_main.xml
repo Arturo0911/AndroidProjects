@@ -31,16 +31,4 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/homer" />
 
-    <ImageView
-        android:id="@+id/leslieimageView"
-        android:layout_width="407dp"
-        android:layout_height="605dp"
-        android:alpha="0"
-        android:onClick="fade"
-        android:scaleType="fitStart"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/leslie" />
 </androidx.constraintlayout.widget.ConstraintLayout>
