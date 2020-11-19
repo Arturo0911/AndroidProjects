@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
         // find by view is similar to docuemnt.getElementById xD
         ImageView bartimageView = (ImageView) findViewById(R.id.bartimageView);
         ImageView homerImageView = (ImageView) findViewById(R.id.homerimageView);
+        ImageView leslieImageView = (ImageView) findViewById(R.id.leslieimageView);
 
         // el parámetro alpha es utilizado para jugar con la solidifquez del elemento, por así decirlo
         // Los parámetros de setDuration son en milisegundos, por lo que 2000 equivalen a 2 segundos.
@@ -30,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
 
             bartimageView.animate().alpha(0).setDuration(2000);
             homerImageView.animate().alpha(1).setDuration(2000);
+            leslieImageView.animate().alpha(1).setDuration(10000);
         } else{
 
             bartShowing = true;
