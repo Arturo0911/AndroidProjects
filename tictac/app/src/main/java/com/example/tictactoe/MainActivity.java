@@ -23,6 +23,11 @@ public class MainActivity extends AppCompatActivity {
     boolean activeGame = true;
 
 
+    public void activeGame (){
+
+    }
+
+
 
     public void dropIn(View view){
 

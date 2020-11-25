@@ -142,6 +142,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="137dp"
         android:layout_marginRight="137dp"
+        android:onClick="activeGame"
         android:text="activate"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
