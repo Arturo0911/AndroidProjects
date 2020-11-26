@@ -7,8 +7,12 @@ import android.media.Image;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
+import android.widget.GridLayout;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -23,9 +27,7 @@ public class MainActivity extends AppCompatActivity {
     boolean activeGame = true;
 
 
-    public void activeGame (){
 
-    }
 
 
 
@@ -50,38 +52,75 @@ public class MainActivity extends AppCompatActivity {
         counter.setTranslationY(-1500);
 
         int tapCounter = Integer.parseInt(counter.getTag().toString());
-        gameState[tapCounter] = activePlayer;
+
+        if (gameState[tapCounter] == 2 && activeGame){
+            gameState[tapCounter] = activePlayer;
 
 
-        if (activePlayer == 0){
-            counter.setImageResource(R.drawable.yellow);
-            counter.animate().translationYBy(1500).rotation(3600).setDuration(300);
-            activePlayer = 1;
-        } else {
-            counter.setImageResource(R.drawable.red);
-            counter.animate().translationYBy(1500).rotation(3600).setDuration(300);
-            activePlayer = 0;
-        }
+            if (activePlayer == 0){
+                counter.setImageResource(R.drawable.yellow);
+                counter.animate().translationYBy(1500).rotation(3600).setDuration(300);
+                activePlayer = 1;
+            } else {
+                counter.setImageResource(R.drawable.red);
+                counter.animate().translationYBy(1500).rotation(3600).setDuration(300);
+                activePlayer = 0;
+            }
 
-        String winner = "";
-        for (int[] winningPosition: winningPositions){
 
-            if (gameState[winningPosition[0]] == gameState[winningPosition[1]] && gameState[winningPosition[1]] == gameState[winningPosition[2]] &&
-                    gameState[winningPosition[0]] != 2){
+            for (int[] winningPosition: winningPositions){
 
-                if (activePlayer == 1){
-                    winner = "Yellow";
-                }else{
-                    winner = "Red";
+                if (gameState[winningPosition[0]] == gameState[winningPosition[1]] && gameState[winningPosition[1]] == gameState[winningPosition[2]] &&
+                        gameState[winningPosition[0]] != 2){
+                    activeGame = false;
+                    String winner = "";
+
+                    if (activePlayer == 1){
+                        winner = "Yellow";
+                    }else{
+                        winner = "Red";
+                    }
+
+
+                    //Toast.makeText(this, winner +" ha ganado :v ", Toast.LENGTH_SHORT).show();
+
+                    Button activateButton = (Button) findViewById(R.id.activateButton);
+                    TextView winnerTextView = (TextView) findViewById(R.id.winnerTextView);
+                    winnerTextView.setText(winner +" ha ganado :v ");
+                    activateButton.setVisibility(view.VISIBLE);
+
+                    winnerTextView.setVisibility(view.VISIBLE);
                 }
-
-
-                Toast.makeText(this, winner +" ha ganado :v ", Toast.LENGTH_SHORT).show();
             }
         }
 
+    }
 
+    public void activeGame (View view){
 
+        Toast.makeText(this, "hola :v ", Toast.LENGTH_SHORT).show();
+        Button activateButton = (Button) findViewById(R.id.activateButton);
+        TextView winnerTextView = (TextView) findViewById(R.id.winnerTextView);
+
+        activateButton.setVisibility(view.INVISIBLE);
+
+        winnerTextView.setVisibility(view.INVISIBLE);
+
+        androidx.gridlayout.widget.GridLayout gridLayout = findViewById(R.id.gridLayout);
+
+        for (int x = 0; x < gridLayout.getChildCount(); x++){
+
+            ImageView counter = (ImageView) gridLayout.getChildAt(x);
+            counter.setImageDrawable(null);
+
+        }
+
+        for (int x = 0; x < gameState.length; x++){
+            gameState[x] = 2;
+        }
+        activePlayer =  0 ;
+
+        activeGame = true;
 
     }
 

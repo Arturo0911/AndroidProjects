@@ -118,7 +118,7 @@
     </androidx.gridlayout.widget.GridLayout>
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/winnerTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="181dp"
@@ -127,7 +127,7 @@
         android:layout_marginEnd="181dp"
         android:layout_marginRight="181dp"
         android:layout_marginBottom="94dp"
-        android:text="TextView"
+        android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/gridLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -144,7 +144,8 @@
         android:layout_marginRight="137dp"
         android:onClick="activeGame"
         android:text="activate"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/winnerTextView" />
 </androidx.constraintlayout.widget.ConstraintLayout>
