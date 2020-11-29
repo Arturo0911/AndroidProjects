@@ -20,7 +20,7 @@
             android:layout_marginRight="30dp"
             android:layout_marginLeft="30dp"
             android:id="@+id/userName"
-            android:hint="Input your username">
+            android:hint="Username">
 
         </EditText>
 
@@ -31,31 +31,34 @@
             android:layout_marginRight="30dp"
             android:layout_marginLeft="30dp"
             android:id="@+id/userPass"
-            android:hint="Input your password">
+            android:hint="Password">
 
         </EditText>
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
             android:orientation="horizontal">
             <Button
-                android:id="@+id/Init"
+                android:id="@+id/Login"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
+                android:layout_marginRight="5dp"
                 android:layout_weight="0.0"
                 android:onClick="greetingInitial"
-                android:text="init" />
+                android:text="Login" />
 
             <Button
                 android:id="@+id/forgotPassword"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                android:layout_weight="0.0"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1.0"
                 android:text="forgot password" />
         </LinearLayout>
 
