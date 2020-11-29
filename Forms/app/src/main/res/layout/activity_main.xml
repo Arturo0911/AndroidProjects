@@ -9,30 +9,56 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="127dp">
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="204dp"
+        tools:layout_editor_absoluteY="305dp">
 
-        <Button
-            android:id="@+id/button3"
-            android:layout_width="129dp"
+        <EditText
+            android:layout_width="355dp"
             android:layout_marginTop="50dp"
-            android:layout_marginRight="100dp"
-            android:layout_marginLeft="100dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Button"
-            app:backgroundTint="@color/teal_200" />
+            android:layout_marginRight="30dp"
+            android:layout_marginLeft="30dp"
+            android:id="@+id/userName"
+            android:hint="Input your username">
 
-        <TextView
-            android:layout_width="310dp"
-            android:layout_height="31dp">
+        </EditText>
 
-        </TextView>
+        <EditText
+            android:layout_width="355dp"
+            android:layout_marginTop="15dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="30dp"
+            android:layout_marginLeft="30dp"
+            android:id="@+id/userPass"
+            android:hint="Input your password">
+
+        </EditText>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="30dp"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/Init"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="0.0"
+                android:onClick="greetingInitial"
+                android:text="init" />
+
+            <Button
+                android:id="@+id/forgotPassword"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="0.0"
+                android:text="forgot password" />
+        </LinearLayout>
+
+
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
