@@ -11,23 +11,47 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         tools:layout_editor_absoluteX="148dp"
-        tools:layout_editor_absoluteY="85dp">
+        tools:layout_editor_absoluteY="85dp"
+        >
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="104dp"
+            android:layout_height="104dp"
+            android:layout_marginLeft="150dp"
+            android:layout_marginTop="100dp"
+            app:srcCompat="@drawable/corazon" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:layout_marginLeft="15dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginLeft="97dp"
+            android:layout_marginBottom="20dp"
             android:fontFamily="sans-serif-black"
             android:text="Fristly input your name to begin">
 
         </TextView>
+
         <EditText
-            android:layout_width="wrap_content"
+            android:id="@+id/nameText"
+            android:layout_width="206dp"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="97dp"
             android:width="250dp">
 
         </EditText>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="150dp"
+            android:layout_marginTop="20dp"
+            android:text="SAVE">
+
+        </Button>
+
+
 
 
     </LinearLayout>
