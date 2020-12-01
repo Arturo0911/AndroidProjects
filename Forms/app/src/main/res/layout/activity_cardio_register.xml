@@ -16,9 +16,9 @@
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="104dp"
-            android:layout_height="104dp"
-            android:layout_marginLeft="150dp"
+            android:layout_width="187dp"
+            android:layout_height="187dp"
+            android:layout_marginLeft="100dp"
             android:layout_marginTop="100dp"
             app:srcCompat="@drawable/corazon" />
 
@@ -43,10 +43,12 @@
         </EditText>
 
         <Button
+            android:id="@+id/buttonInit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="150dp"
+            android:layout_marginLeft="157dp"
             android:layout_marginTop="20dp"
+            android:onClick="initProcess"
             android:text="SAVE">
 
         </Button>
