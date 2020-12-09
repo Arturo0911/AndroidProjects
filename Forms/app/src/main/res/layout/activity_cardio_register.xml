@@ -19,13 +19,12 @@
             android:layout_width="187dp"
             android:layout_height="187dp"
             android:layout_marginLeft="100dp"
-            android:layout_marginTop="100dp"
+            android:layout_marginTop="50dp"
             app:srcCompat="@drawable/corazon" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
             android:layout_marginLeft="97dp"
             android:layout_marginBottom="20dp"
             android:fontFamily="sans-serif-black"
@@ -52,6 +51,25 @@
             android:text="SAVE">
 
         </Button>
+
+        <LinearLayout
+            android:id="@+id/linearLayouLoadingGift"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="invisible">
+
+
+            <pl.droidsonroids.gif.GifImageView
+
+                android:id="@+id/loadingGig"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginLeft="150dp"
+                android:layout_marginTop="25dp"
+                android:src="@drawable/loading"
+                android:visibility="visible" />
+
+        </LinearLayout>
 
 
 

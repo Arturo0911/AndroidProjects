@@ -13,9 +13,17 @@
         tools:layout_editor_absoluteX="204dp"
         tools:layout_editor_absoluteY="305dp">
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black"
+            android:text="Sí quieres hacerte miembro, registra tus datos">
+
+        </TextView>
+
         <EditText
             android:layout_width="355dp"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="40dp"
             android:layout_height="wrap_content"
             android:layout_marginRight="30dp"
             android:layout_marginLeft="30dp"

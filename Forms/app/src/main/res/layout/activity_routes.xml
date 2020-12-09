@@ -6,59 +6,50 @@
     android:layout_height="match_parent"
     tools:context="com.example.routes.Routes">
 
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        tools:layout_editor_absoluteX="201dp"
-        tools:layout_editor_absoluteY="243dp">
+        android:orientation="horizontal"
+        tools:layout_editor_absoluteX="42dp"
+        tools:layout_editor_absoluteY="9dp">
+
+        <Button
+            android:id="@+id/greetingButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:onClick="onGreeting"
+            android:text="Saludo">
+
+        </Button>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/HiButton"
+            android:text="Hola"
+            android:layout_marginLeft="25dp">
+        </Button>
 
         <LinearLayout
-            android:id="@+id/linearTop"
-            android:layout_width="match_parent"
-            android:layout_height="300dp"
-            android:orientation="horizontal">
-
-            <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:width="150dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="35dp"
-                android:hint="Day"
-                android:id="@+id/editDay"
-                >
-            </EditText>
-            <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:width="150dp"
-                android:hint="time trained"
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="35dp"
-                android:id="@+id/editWeek"
-                >
-            </EditText>
-
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/linearBottom"
-            android:layout_width="match_parent"
-
-            android:layout_height="300dp"
-            android:orientation="horizontal">
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
             <Button
                 android:layout_width="wrap_content"
-                android:layout_marginLeft="25dp"
-                android:text="Store"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:id="@+id/wherever"
+                android:text="wherever"
+                android:layout_marginLeft="25dp">
 
             </Button>
 
 
+
         </LinearLayout>
+
+
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
