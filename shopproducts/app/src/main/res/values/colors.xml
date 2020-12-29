@@ -2,6 +2,9 @@
 <resources>
     <color name="colorprimary">#273036</color>
     <color name="bluePrimary">#4568DC</color>
+    <color name="textTitleCard">#355C7D</color>
+    <color name="redCar">#dd1818</color>
+    <color name="grayCar">#bdc3c7</color>
     <color name="colorPrimaryDark">#273036</color>
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>
@@ -11,4 +14,6 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="uiGradients">#203A43</color>
+    <color name="BackgroundMain">#FFFFFF</color>
+    <color name="buttonsMain">#FFEFBA</color>
 </resources>
