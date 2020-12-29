@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">shop-products</string>
+    <string name="label_1">Black</string>
+    <string name="label_2">White</string>
+    <string name="label_3">Silver</string>
+    <string name="label_4">cuarto item</string>
+    <string name="label_5">quinto item</string>
+
+
 </resources>
