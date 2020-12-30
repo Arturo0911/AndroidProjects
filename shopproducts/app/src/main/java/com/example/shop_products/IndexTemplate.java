@@ -12,7 +12,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import java.util.concurrent.TimeUnit;
-
+import com.example.shop_products.GlobalsVariablesToShop;
 
 public class IndexTemplate extends AppCompatActivity {
 
@@ -20,15 +20,26 @@ public class IndexTemplate extends AppCompatActivity {
     EditText idText;
     ActionBar actionBar;
 
+
     public void initActivity(View view){
         nameText = (EditText) findViewById(R.id.nameText);
         idText = (EditText) findViewById(R.id.idText);
         Intent intent = new Intent(this, MainActivity.class);
 
+        GlobalsVariablesToShop.nameValueText = nameText.getText().toString();
+        GlobalsVariablesToShop.idvalueText = idText.getText().toString();
+
         try {
 
             if (!nameText.getText().toString().equals("") && !idText.getText().toString().equals("")){
-                TimeUnit.SECONDS.sleep(2);
+                //TimeUnit.SECONDS.sleep(2);
+
+
+
+                /*intent.putExtra("Name",nameValue);
+                intent.putExtra("Id",idValue);*/
+
+
                 startActivity(intent);
             }else{
                 Toast.makeText(this, "Fields cannot be empty", Toast.LENGTH_LONG).show();

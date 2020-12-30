@@ -3,6 +3,7 @@ package com.example.shop_products;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -14,9 +15,22 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     ActionBar actionBar;
+    RadioButton black;
+    RadioButton blue;
+    RadioButton silver;
+    RadioButton red;
+
 
     public void generatePurchase (View view){
-        Toast.makeText(this, "Purchase generated", Toast.LENGTH_SHORT).show();
+
+        Intent intentPurchase = new Intent(this, ConfirmPurchase.class);
+
+        if (!black.isChecked() && !blue.isChecked() && !silver.isChecked() && !red.isChecked()){
+            Toast.makeText(this, "You must to check almost one color", Toast.LENGTH_SHORT).show();
+        }else{
+            Toast.makeText(this, "Purchase generated", Toast.LENGTH_SHORT).show();
+            startActivity(intentPurchase);
+        }
     }
 
     @Override
@@ -29,47 +43,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
 
-        RadioButton black = (RadioButton) findViewById(R.id.radioBlackButton);
-        RadioButton blue = (RadioButton) findViewById(R.id.radioBlueButton);
-        RadioButton silver = (RadioButton) findViewById(R.id.radioSilverButton);
-        RadioButton red = (RadioButton) findViewById(R.id.radioRedButton);
+        black = (RadioButton) findViewById(R.id.radioBlackButton);
+        blue = (RadioButton) findViewById(R.id.radioBlueButton);
+        silver = (RadioButton) findViewById(R.id.radioSilverButton);
+        red = (RadioButton) findViewById(R.id.radioRedButton);
 
         black.setOnClickListener(this);
         blue.setOnClickListener(this);
         silver.setOnClickListener(this);
         red.setOnClickListener(this);
-
-        /*black.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                carView.setImageResource(R.drawable.beat_black);
-
-            }
-        });
-
-        blue.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                carView.setImageResource(R.drawable.beat_blue);
-
-            }
-        });
-
-        silver.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                carView.setImageResource(R.drawable.beat_gray);
-
-            }
-        });
-
-        red.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                carView.setImageResource(R.drawable.beat_red);
-
-            }
-        });*/
 
     }
 
