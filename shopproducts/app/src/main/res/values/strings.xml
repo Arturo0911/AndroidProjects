@@ -5,6 +5,14 @@
     <string name="label_3">Silver</string>
     <string name="label_4">cuarto item</string>
     <string name="label_5">quinto item</string>
+    <string name="cardNumber">Input your card number</string>
+
+    <string-array name="paymentMethods">
+        <item>Visa</item>
+        <item>Mastercard</item>
+        <item>Paypald</item>
+        <item>Bitcoins</item>
+    </string-array>
 
 
 </resources>
