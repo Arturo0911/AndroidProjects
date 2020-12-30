@@ -11,6 +11,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -22,7 +23,10 @@ public class ConfirmPurchase extends AppCompatActivity {
     TextView textNameView;
     TextView idTextValue;
     TextView colorVehicle;
+    EditText cardNumber;
+    EditText dateExpire;
     ActionBar actionBar;
+    Spinner spinner;
 
     public void cancelActivity(View view){
 
@@ -35,8 +39,17 @@ public class ConfirmPurchase extends AppCompatActivity {
     }
 
     public void confirmPurchase(View view){
-        generateDialog();
 
+        spinner.getSelectedItem();
+        cardNumber = (EditText) findViewById(R.id.cardNumber);
+        dateExpire = (EditText) findViewById(R.id.dateExpire);
+
+
+        if (!cardNumber.getText().toString().equals("") && !dateExpire.getText().toString().equals("") ){
+            generateDialog();
+        }else{
+            Toast.makeText(this, "cannot be empty the payment field", Toast.LENGTH_LONG).show();
+        }
     }
 
     @Override
@@ -44,7 +57,7 @@ public class ConfirmPurchase extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_confirm_purchase);
 
-        Spinner spinner = findViewById(R.id.paymentMethods);
+        spinner = findViewById(R.id.paymentMethods);
 
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.paymentMethods, R.layout.support_simple_spinner_dropdown_item);
         adapter.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);

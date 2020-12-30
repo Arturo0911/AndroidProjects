@@ -32,7 +32,7 @@
 
         <ImageView
             android:id="@+id/carView"
-            android:layout_width="187dp"
+            android:layout_width="200dp"
             android:layout_height="187dp"
             android:layout_marginLeft="100dp"
             android:layout_marginTop="50dp"

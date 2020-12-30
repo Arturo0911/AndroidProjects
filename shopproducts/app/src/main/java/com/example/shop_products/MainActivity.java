@@ -79,7 +79,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 carView.setImageResource(R.drawable.beat_red);
                 GlobalsVariablesToShop.carColor = "Red";
                 break;
-
         }
     }
 }

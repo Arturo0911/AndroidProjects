@@ -33,13 +33,6 @@ public class IndexTemplate extends AppCompatActivity {
 
             if (!nameText.getText().toString().equals("") && !idText.getText().toString().equals("")){
                 //TimeUnit.SECONDS.sleep(2);
-
-
-
-                /*intent.putExtra("Name",nameValue);
-                intent.putExtra("Id",idValue);*/
-
-
                 startActivity(intent);
             }else{
                 Toast.makeText(this, "Fields cannot be empty", Toast.LENGTH_LONG).show();
