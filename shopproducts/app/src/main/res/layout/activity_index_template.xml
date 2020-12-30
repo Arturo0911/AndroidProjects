@@ -20,7 +20,7 @@
             android:layout_height="187dp"
             android:layout_marginLeft="100dp"
             android:layout_marginTop="50dp"
-            app:srcCompat="@drawable/logocar" />
+            app:srcCompat="@drawable/firstlogo" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -28,7 +28,7 @@
             android:layout_marginLeft="97dp"
             android:layout_marginBottom="20dp"
             android:fontFamily="sans-serif-black"
-            android:text="Fristly input your name to begin">
+            android:text="To begin, complete those fields">
 
         </TextView>
 
