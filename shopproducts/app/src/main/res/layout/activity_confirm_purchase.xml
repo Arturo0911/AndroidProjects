@@ -5,55 +5,270 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ConfirmPurchase">
-
-    <View
-        android:id="@+id/topView"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="25dp"
-        android:background="@color/colorPrimaryDark"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+        <View
+            android:id="@+id/topView"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="@color/colorPrimaryDark">
 
-    </View>
+        </View>
 
-    <View
-        android:id="@+id/topImage"
-        android:layout_width="match_parent"
-        android:layout_height="25dp"
-        android:layout_marginTop="25dp"
-        android:background="@drawable/top_wave"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        <View
+            android:id="@+id/topImage"
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:background="@drawable/top_wave">
+        </View>
 
-    </View>
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="154dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="200dp"
-        android:text="Bill detail"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:text="Bill detail"
+            android:layout_marginStart="130dp"
+            android:layout_marginBottom="35dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="24sp"
+            ></TextView>
 
-    <TextView
-        android:id="@+id/textNameView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="156dp"
-        android:layout_marginTop="100dp"
-        android:layout_marginEnd="197dp"
-        android:layout_marginBottom="484dp"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:orientation="horizontal"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Name:"
+                android:layout_marginStart="25dp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                ></TextView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:id="@+id/textNameView"
+                android:layout_height="match_parent"
+                android:layout_marginStart="120dp"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                ></TextView>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:orientation="horizontal"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Number id:"
+                android:layout_marginStart="25dp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                ></TextView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:id="@+id/idTextValue"
+                android:layout_height="match_parent"
+                android:layout_marginStart="80dp"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                ></TextView>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:orientation="horizontal"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Vehicle:"
+                android:layout_marginStart="25dp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                ></TextView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:id="@+id/vehicleType"
+                android:layout_height="match_parent"
+                android:text="Chevrolet Beat Sedan"
+                android:layout_marginStart="105dp"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                ></TextView>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:orientation="horizontal"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Color:"
+                android:layout_marginStart="25dp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                ></TextView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:id="@+id/colorVehicle"
+                android:layout_height="match_parent"
+                android:layout_marginStart="125dp"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                ></TextView>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:orientation="horizontal"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Credit card:"
+                android:layout_marginStart="25dp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                ></TextView>
+
+            <Spinner
+                android:layout_width="160dp"
+                android:id="@+id/paymentMethods"
+                android:layout_height="match_parent"
+                android:layout_marginStart="70dp"
+                >
+            </Spinner>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:orientation="horizontal"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="15dp"
+                android:text="Number:"
+                android:layout_marginStart="25dp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                ></TextView>
+
+            <EditText
+                android:layout_width="160dp"
+                android:id="@+id/cardNumber"
+                android:layout_height="50dp"
+                android:inputType="number"
+                android:layout_marginStart="100dp"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                ></EditText>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:orientation="horizontal"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="15dp"
+                android:text="Expires:"
+                android:layout_marginStart="25dp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                ></TextView>
+
+            <EditText
+                android:layout_width="160dp"
+                android:id="@+id/dateExpire"
+                android:layout_height="50dp"
+                android:inputType="date"
+                android:layout_marginStart="100dp"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                ></EditText>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/BottomLayout"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="@color/BackgroundMain"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp">
+
+                <Button
+                    android:id="@+id/purchaseButton"
+                    android:layout_width="150dp"
+                    android:layout_height="70dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_weight="1"
+                    android:onClick="confirmPurchase"
+                    android:text="Purchase"
+                    android:textColor="@color/buttonsMain"
+                    android:textStyle="bold"
+                    app:backgroundTint="@color/colorPrimaryDark"
+                    app:cornerRadius="?attr/dialogPreferredPadding" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="50dp">
+
+                <Button
+                    android:id="@+id/cancelButton"
+                    android:layout_width="150dp"
+                    android:layout_height="70dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_weight="1"
+                    android:onClick="cancelActivity"
+                    android:text="cancel"
+                    android:textColor="@color/buttonsMain"
+                    android:textStyle="bold"
+                    app:backgroundTint="@color/colorPrimaryDark"
+                    app:cornerRadius="?attr/dialogPreferredPadding" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

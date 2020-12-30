@@ -62,18 +62,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.radioBlackButton:
 
                 carView.setImageResource(R.drawable.beat_black);
+                GlobalsVariablesToShop.carColor = "Black";
                 break;
             case R.id.radioBlueButton:
 
                 carView.setImageResource(R.drawable.beat_blue);
+                GlobalsVariablesToShop.carColor = "Blue";
                 break;
             case R.id.radioSilverButton:
 
                 carView.setImageResource(R.drawable.beat_gray);
+                GlobalsVariablesToShop.carColor = "Silver";
                 break;
             case R.id.radioRedButton:
 
                 carView.setImageResource(R.drawable.beat_red);
+                GlobalsVariablesToShop.carColor = "Red";
                 break;
 
         }
