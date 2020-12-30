@@ -14,6 +14,22 @@
         tools:layout_editor_absoluteY="85dp"
         >
 
+        <View
+            android:id="@+id/viewTopInit"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:background="@color/colorPrimaryDark">
+
+        </View>
+
+        <View
+            android:id="@+id/viewTopImage"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:background="@drawable/top_wave">
+
+        </View>
+
         <ImageView
             android:id="@+id/carView"
             android:layout_width="187dp"
@@ -28,16 +44,17 @@
             android:layout_marginLeft="97dp"
             android:layout_marginBottom="20dp"
             android:fontFamily="sans-serif-black"
-            android:text="To begin, complete those fields">
+            android:text="To get started, fill in these fields">
 
         </TextView>
 
-        <!--<EditText
+        <EditText
             android:id="@+id/nameText"
             android:layout_width="206dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="97dp"
-            android:width="250dp">
+            android:width="250dp"
+            android:hint="input your name">
 
         </EditText>
         <EditText
@@ -45,39 +62,10 @@
             android:layout_width="206dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="97dp"
-            android:width="250dp">
+            android:width="250dp"
+            android:hint="input your id number">
 
-        </EditText>-->
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/nameText"
-            android:layout_width="220dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="97dp"
-            android:layout_marginBottom="7dp"
-            android:hint="input your name"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                />
-
-        </com.google.android.material.textfield.TextInputLayout>
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/idText"
-            android:layout_width="220dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="97dp"
-            android:hint="input your id number"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                />
-
-        </com.google.android.material.textfield.TextInputLayout>
+        </EditText>
 
         <LinearLayout
             android:layout_width="150dp"
@@ -90,6 +78,7 @@
                 android:layout_height="70dp"
                 android:layout_marginTop="20dp"
                 android:layout_weight="1"
+                android:onClick="initActivity"
                 android:text="Init"
                 android:textColor="@color/buttonsMain"
                 android:textStyle="bold"

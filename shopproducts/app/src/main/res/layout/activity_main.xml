@@ -32,7 +32,7 @@
 
                     <!-- Media -->
                     <ImageView
-                        android:id="@+id/imageView"
+                        android:id="@+id/carView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         app:srcCompat="@drawable/beat_blue" />
@@ -107,10 +107,12 @@
                                     android:layout_marginStart="35dp"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content">
+
                                     <RadioButton
                                         android:id="@+id/radioBlackButton"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
+                                        android:onClick="onCheckedButton"
                                         android:shadowColor="@color/black"
                                         android:textColor="@color/black"
                                         android:textColorHint="@color/black"
