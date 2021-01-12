@@ -10,44 +10,45 @@ public class Credential {
      */
     public boolean checkCredential(String credential){
 
-        String [] credentials = credential.split("");
+        String[] vectorCed = credential.split("");
 
         try {
+            int sizeVector = vectorCed.length;
+            int digitVerify = Integer.parseInt(vectorCed[sizeVector - 1]);
+            int thirdDigit  = Integer.parseInt(vectorCed[3]);
+            int sum = 0;
 
-            int thirdDigit = Integer.parseInt(credentials[2]);
-            int verifyDigit = Integer.parseInt(credentials[9]);
-            int totalSum = 0;
-            if (credentials.length == 10 && thirdDigit < 6){
 
-                for (int x = 0; x < credentials.length - 1; x++){
-                    if (x % 2 ==0){
-                        if(Integer.parseInt(credentials[x]) * 2 >= 10){
+            if (sizeVector == 11 && thirdDigit < 6){
+                for (int i = 0; i < vectorCed.length-1; i++){
 
-                            totalSum += (Integer.parseInt(credentials[x]) * 2) - 9;
+                    if (i % 2 == 0){
+                        if(Integer.parseInt((vectorCed[i])) * 2 >= 10 ){
+                            sum += (Integer.parseInt((vectorCed[i])) * 2) - 9 ;
                         }else{
-                            totalSum += Integer.parseInt(credentials[x]) * 2;
+                            sum += Integer.parseInt((vectorCed[i])) * 2;
                         }
                     }else{
-                        totalSum += Integer.parseInt(credentials[x]);
+                        sum += Integer.parseInt((vectorCed[i]));
                     }
+
                 }
 
-                String [] lastArray = String.valueOf(totalSum).split("");
-                int finalDigit = Integer.parseInt(lastArray[lastArray.length - 1]);
+                String[] finalArray = String.valueOf(sum).split("");
+                int lastDigit = Integer.parseInt(finalArray[2]);
 
-                if (10 - finalDigit  == verifyDigit){
-                    return true;
-                }else{
-                    return false;
-                }
+                return 10 - lastDigit  == digitVerify;
 
             }else{
                 return false;
             }
+
+
         }catch (Exception e){
-            e.printStackTrace();
             return false;
         }
+
+
 
 
     }
