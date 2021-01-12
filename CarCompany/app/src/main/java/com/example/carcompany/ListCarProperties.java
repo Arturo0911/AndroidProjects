@@ -2,6 +2,7 @@ package com.example.carcompany;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -12,25 +13,34 @@ import java.util.Arrays;
 
 public class ListCarProperties extends Activity {
 
-    private ListView listCarProperties;
+    private ListView carList;
+    private CustomizedListCar customizedListCar;
 
     @Override
     protected void  onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.list_item_cars);
 
-        listCarProperties = (ListView) findViewById(R.id.listCarProperties);
+        carList = (ListView) findViewById(R.id.listCarProperties);
 
-         ArrayList<String> carResources = Vehicle.vehicleList.get(0);
+         //ArrayList<String> carResources = Vehicle.vehicleList.get(0);
 
-         ArrayList<String> vector = new ArrayList<>();
-         vector.add("Arturo");
-         vector.add("Negreiros");
+         ArrayList<ArrayList<String>> vector = new ArrayList<ArrayList<String>>();
+
+         ArrayList<String> valuess_1 = new ArrayList<String>(Arrays.asList("GYE-555", "Chevrolet"));
+         ArrayList<String> valuess_2 = new ArrayList<String>(Arrays.asList("UIO-295", "Mazda"));
+         vector.add(valuess_1);
+         vector.add(valuess_2);
 
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(ListCarProperties.this, android.R.layout.simple_list_item_1, vector);
+        try {
+            customizedListCar = new CustomizedListCar(this,vector);
 
-        listCarProperties.setAdapter(adapter);
+            carList.setAdapter(customizedListCar);
+        }catch (Exception e){
+            e.printStackTrace();
+            Log.e("error", "onCreate: ", e);
+        }
 
 
     }
