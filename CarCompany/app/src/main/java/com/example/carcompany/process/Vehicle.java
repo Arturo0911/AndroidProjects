@@ -5,6 +5,15 @@ import java.util.Arrays;
 
 public class Vehicle {
 
+
+    /**
+     * We declare a Constant to access in all project
+     * for get secure of any data will be inserted successfully then
+     *use  initialized variables as
+     *@param constant serviceType
+     * @param constant imageName to be acess in the list view activity
+    */
+
     public static ArrayList<ArrayList<String>> vehicleList = new ArrayList<ArrayList<String>>();
 
 
@@ -16,14 +25,14 @@ public class Vehicle {
     public static String imageName = "wash";
 
     /**
-     * @param plate
-     * @param color
-     * @param make
-     * @param model
-     * @param year
-     * @param ownerName
-     * @param ownerCredential
-     * @param ownerLastname
+     * @param plate plate car
+     * @param color color car
+     * @param make make car
+     * @param model model car
+     * @param year year, whatever you want!!
+     * @param ownerName propietary name
+     * @param ownerCredential credentials
+     * @param ownerLastname lastname propietary
      * */
     public void addToArray(String plate, String make,String model, String year,
                            String color, String ownerName, String ownerLastname,String ownerCredential, String service, String imgName){

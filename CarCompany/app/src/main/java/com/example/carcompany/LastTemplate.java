@@ -50,16 +50,30 @@ public class LastTemplate extends AppCompatActivity{
     }
 
     public void sendOnclickButton(View view){
-        //generateDialogOnConFirm();
+
         String emailAddress = email.getEditText().getText().toString();
         String url = "http://" + "10.0.2.2"+":"+4000+"/android";
-        try {
-            RequestMethodPOST(fullName.getText().toString(), emailAddress,whichService.getText().toString(), url );
-        }catch (Exception e){
-            Toast.makeText(this, "Error by: "+e.toString(), Toast.LENGTH_SHORT).show();
-        }finally {
-            email.getEditText().setText("");
+        generateDialogOnConFirm();
+
+        if (!emailAddress.equals("")){
+
+            try {
+                RequestMethodPOST(fullName.getText().toString(), emailAddress,whichService.getText().toString(), url );
+                Toast.makeText(this, "email sended successfully", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(LastTemplate.this, MainActivity.class);
+                startActivity(intent);
+            }catch (Exception e){
+                Toast.makeText(this, "Error by: "+e.toString(), Toast.LENGTH_SHORT).show();
+            }finally {
+                email.getEditText().setText("");
+            }
+        }else{
+            Toast.makeText(this, "the field email cannot be empty", Toast.LENGTH_SHORT).show();
         }
+
+
+
+
     }
 
 
@@ -69,25 +83,6 @@ public class LastTemplate extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_last_template);
-
-        /*
-        * intentLastTemplate.putExtra("position", String.valueOf(position));
-        * */
-
-        /*ArrayList<ArrayList<String>> matrix = new ArrayList<ArrayList<String>>();
-
-        ArrayList<String> vector_1 = new ArrayList<String>(Arrays.asList("GYE-2526", "Chevrolet",
-                "Grand Vitara", "2002", "Black", "Arturo", "Negreiros", "091823721", "Car washing", Vehicle.imageName));
-
-        ArrayList<String> vector_2 = new ArrayList<String>(Arrays.asList("UIO-1515", "Ford",
-                "Runner", "2018", "Red", "Francesco", "Samanez", "1234567898", "Car maintenance", Vehicle.imageName));
-
-        ArrayList<String> vector_3 = new ArrayList<String>(Arrays.asList("TOJ-0010", "Mazda",
-                "Mazda", "2000", "Silver", "Juan", "Samanez", "1234567898", "Car paint", Vehicle.imageName));
-
-        matrix.add(vector_1);
-        matrix.add(vector_2);
-        matrix.add(vector_3);*/
 
         whichService = (TextView)findViewById(R.id.whichService);
         fullMake = (TextView)findViewById(R.id.fullMake);
@@ -107,9 +102,6 @@ public class LastTemplate extends AppCompatActivity{
 
         valuesAdd = Vehicle.vehicleList.get(index);
 
-        /*
-         * [[plate, make,model,year,color, owName, owLname, owCredential, Vehicle.serviceType, Vehicle.imageName]]
-         * */
 
         fullOrder.setText(String.valueOf(index));
         whichService.setText(valuesAdd.get(8));
@@ -131,9 +123,6 @@ public class LastTemplate extends AppCompatActivity{
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         Toast.makeText(getApplicationContext(), "ok", Toast.LENGTH_LONG).show();
-                        //finish();
-                        //Intent intent = new Intent(LastTemplate.this, MainActivity.class);
-                        //startActivity(intent);
                     }
                 })
                 .setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {

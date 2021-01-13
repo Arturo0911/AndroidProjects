@@ -5,8 +5,8 @@ from flask import jsonify, request, Response
 app = Flask(__name__)
 app.config['MAIL_SERVER']='smtp.gmail.com'
 app.config['MAIL_PORT'] = 465
-app.config['MAIL_USERNAME'] = 'negreirosarturo@gmail.com'
-app.config['MAIL_PASSWORD'] = 'DreamOn1992'
+app.config['MAIL_USERNAME'] = 'sapo@gmail.com'
+app.config['MAIL_PASSWORD'] = '**********************'
 app.config['MAIL_USE_TLS'] = False
 app.config['MAIL_USE_SSL'] = True
 mail = Mail(app)
@@ -24,7 +24,7 @@ def index():
                 'status':'email sended'
             })
     else:
-        '''msg = Message('Hello', sender = 'negreirosarturo@gmail.com', recipients = ['anegreiross@outlook.com'])
+        '''msg = Message('Hello', sender = 'sapo@gmail.com', recipients = ['sapo@outlook.com'])
         msg.body = "Purcahse confirmed"
         mail.send(msg)'''
         return "Hello android"
