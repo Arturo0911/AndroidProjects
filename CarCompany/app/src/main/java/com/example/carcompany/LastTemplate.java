@@ -9,8 +9,20 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.gson.JsonObject;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
+
+
 import com.example.carcompany.process.Vehicle;
 import com.google.android.material.button.MaterialButton;
+import com.google.android.material.textfield.TextInputLayout;
+
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -28,6 +40,8 @@ public class LastTemplate extends AppCompatActivity{
     private MaterialButton deleteOrder;
     private MaterialButton confirmOrder;
 
+    private TextInputLayout email;
+
     public void onDeleteOrder(View view){
         fullOrder = (TextView) findViewById(R.id.fullOrder);
         int index = Integer.parseInt(fullOrder.getText().toString());
@@ -35,9 +49,21 @@ public class LastTemplate extends AppCompatActivity{
         //Toast.makeText(this, "order number: "+fullOrder.getText().toString(), Toast.LENGTH_SHORT).show();
     }
 
-    public void finishButton(View view ){
-        generateDialogOnConFirm();
+    public void sendOnclickButton(View view){
+        //generateDialogOnConFirm();
+        String emailAddress = email.getEditText().getText().toString();
+        String url = "http://" + "10.0.2.2"+":"+4000+"/android";
+        try {
+            RequestMethodPOST(fullName.getText().toString(), emailAddress,whichService.getText().toString(), url );
+        }catch (Exception e){
+            Toast.makeText(this, "Error by: "+e.toString(), Toast.LENGTH_SHORT).show();
+        }finally {
+            email.getEditText().setText("");
+        }
     }
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,6 +97,8 @@ public class LastTemplate extends AppCompatActivity{
         serviceDescription = (TextView)findViewById(R.id.serviceDescription);
         fullOrder = (TextView) findViewById(R.id.fullOrder);
 
+        email = (TextInputLayout) findViewById(R.id.email);
+
 
         Intent lastIntent = getIntent();
         int index = Integer.parseInt(lastIntent.getStringExtra("position"));
@@ -103,9 +131,9 @@ public class LastTemplate extends AppCompatActivity{
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         Toast.makeText(getApplicationContext(), "ok", Toast.LENGTH_LONG).show();
-
-                        Intent intent = new Intent(LastTemplate.this, MainActivity.class);
-                        startActivity(intent);
+                        //finish();
+                        //Intent intent = new Intent(LastTemplate.this, MainActivity.class);
+                        //startActivity(intent);
                     }
                 })
                 .setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
@@ -149,6 +177,45 @@ public class LastTemplate extends AppCompatActivity{
                 })
                 .setCancelable(false)
                 .show();
+    }
+
+
+
+
+    public void RequestMethodPOST(String fullname , String email, String service, String url){
+
+        JSONObject jsonObject = new JSONObject();
+        try {
+
+            jsonObject.put("Fullname", fullname);
+            jsonObject.put("Email", email);
+            jsonObject.put("service",service);
+
+
+        }catch (Exception e ){
+            Toast.makeText(LastTemplate.this, "Error by: "+e.toString(), Toast.LENGTH_SHORT).show();
+        }
+
+        RequestQueue requestQueue = Volley.newRequestQueue(LastTemplate.this);
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(
+                Request.Method.POST,
+                url,
+                jsonObject,
+
+                new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        Toast.makeText(LastTemplate.this, "response: "+response.toString(), Toast.LENGTH_SHORT).show();
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(LastTemplate.this, "this is my error: "+error.toString(), Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+        requestQueue.add(jsonObjectRequest);
     }
 
 
