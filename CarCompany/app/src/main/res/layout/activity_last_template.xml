@@ -139,14 +139,15 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
                     android:orientation="horizontal">
+
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/confirmOrder"
+                        style="?attr/borderlessButtonStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="8dp"
-                        android:text="Confirm"
-                        style="?attr/borderlessButtonStyle"
-                        />
+                        android:onClick="finishButton"
+                        android:text="Confirm" />
 
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/deleteOrder"

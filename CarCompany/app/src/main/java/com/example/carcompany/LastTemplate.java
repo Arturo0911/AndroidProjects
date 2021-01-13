@@ -35,6 +35,10 @@ public class LastTemplate extends AppCompatActivity{
         //Toast.makeText(this, "order number: "+fullOrder.getText().toString(), Toast.LENGTH_SHORT).show();
     }
 
+    public void finishButton(View view ){
+        generateDialogOnConFirm();
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -87,23 +91,7 @@ public class LastTemplate extends AppCompatActivity{
         fullCredentials.setText(valuesAdd.get(7));
         serviceDescription.setText("The plate car is "+valuesAdd.get(0)+".With this service you will have the best experience with us");
 
-        /*deleteOrder = (MaterialButton) findViewById(R.id.deleteOrder);
-        confirmOrder = (MaterialButton) findViewById(R.id.confirmOrder);
-
-        deleteOrder.setOnClickListener(this);
-        confirmOrder.setOnClickListener(this);*/
     }
-
-    /*
-     * Called when a view has been clicked.
-     *
-     * @param  view that was clicked.
-     */
-    /*@Override
-    public void onClick(View v) {
-
-    }*/
-
 
 
 
