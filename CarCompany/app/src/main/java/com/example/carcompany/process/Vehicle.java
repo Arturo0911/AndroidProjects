@@ -24,20 +24,4 @@ public class Vehicle {
         vehicleList.add(vector);
     }
 
-    /**
-     * @param index this param will be use to get the correct array to display into Grid view
-     *
-     */
-    public ArrayList<String> viewArrayList(int index){
-
-        return vehicleList.get(index);
-
-    }
-
-    public ArrayList<ArrayList<String>> getAllMatrix(){
-
-        return vehicleList;
-    }
-
-
 }

@@ -2,6 +2,7 @@ package com.example.carcompany;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -39,22 +40,18 @@ public class MainActivity extends AppCompatActivity {
         ownerLastname = (TextInputLayout) findViewById(R.id.ownerLastname);
         ownerCredentials = (TextInputLayout) findViewById(R.id.ownerCredentials);
 
-        /*
-         * @param carPlate
-         * @param carMake
-         * @param carModel
-         * @param carYear
-         * @param carColor
-         * @param ownerName
-         * @param ownerCredentials
-         * @param ownerLastname
-         * */
-
         try {
-            vehicle.addToArray(carPlate.getEditText().toString(), carMake.getEditText().toString(),
-                    carModel.getEditText().toString(),carYear.getEditText().toString(),
-                    carColor.getEditText().toString(),ownerName.getEditText().toString(),
-                    ownerLastname.getEditText().toString(),ownerCredentials.getEditText().toString());
+
+            String plate = carPlate.getEditText().getText().toString();
+            String make = carMake.getEditText().getText().toString();
+            String model = carModel.getEditText().getText().toString();
+            String year = carYear.getEditText().getText().toString();
+            String color = carColor.getEditText().getText().toString();
+            String owName  = ownerName.getEditText().getText().toString();
+            String owLname = ownerLastname.getEditText().getText().toString();
+            String owCredential = ownerCredentials.getEditText().getText().toString();
+
+            vehicle.addToArray(plate, make,model,year,color, owName, owLname, owCredential);
             clearFields(carPlate, carMake, carModel,carYear, carColor, ownerName, ownerLastname, ownerCredentials);
             Toast.makeText(MainActivity.this, "The fields was be saved successfully", Toast.LENGTH_SHORT).show();
         }catch (Exception e){
@@ -63,42 +60,23 @@ public class MainActivity extends AppCompatActivity {
         }
 
 
-
-        /*//wnerCredentials = (TextInputLayout) findViewById(R.id.ownerCredentials);
-        /*int counter = 0;
-        String [] names = name.split("");
-
-        if (credential.checkCredential("0918237421")){
-            Toast.makeText(MainActivity.this, "credentials: "+ownerCredentials.getEditText().getText().toString()+" are correct!!", Toast.LENGTH_SHORT).show();
-        }else{
-            try {
-                Toast.makeText(MainActivity.this, "Wrong credentials "+names[0], Toast.LENGTH_SHORT).show();
-            }catch (Exception e){
-                e.printStackTrace();
-                Toast.makeText(MainActivity.this, e.toString(), Toast.LENGTH_SHORT).show();
-            }
-        }
-
-        try {
-
-            if (credential.checkCredential(name)){
-                Toast.makeText(MainActivity.this, "credentials: "+ownerCredentials.getEditText().getText().toString()+" are correct!!", Toast.LENGTH_SHORT).show();
-            }else{
-                Toast.makeText(this, name, Toast.LENGTH_SHORT).show();
-                //Toast.makeText(MainActivity.this, "Wrong credentials "+ownerCredentials.getEditText().getText().toString(), Toast.LENGTH_SHORT).show();
-            }
-
-        }catch (Exception e){
-            e.printStackTrace();
-            Toast.makeText(MainActivity.this, "Error by: "+e.toString(), Toast.LENGTH_SHORT).show();
-        }*/
-
-
-
     }
 
     public void viewOnclickButton(View view){
-        Toast.makeText(MainActivity.this, "viewing data", Toast.LENGTH_SHORT).show();
+
+        Intent intent = new Intent(MainActivity.this,ListCarProperties.class);
+        try {
+            if(Vehicle.vehicleList.size() > 0){
+                startActivity(intent);
+            }else{
+                Toast.makeText(MainActivity.this, "cannot view the data because is already empty", Toast.LENGTH_SHORT).show();
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+            Toast.makeText(MainActivity.this, "Error by: "+ e.toString(), Toast.LENGTH_SHORT).show();
+        }
+
+
     }
 
     @Override
