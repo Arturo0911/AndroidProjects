@@ -7,6 +7,10 @@ public class Vehicle {
 
     public static ArrayList<ArrayList<String>> vehicleList = new ArrayList<ArrayList<String>>();
 
+
+    // this method gonna store the type of service such (car washing, car maintenance, car painting)
+    public static String serviceType;
+
     /**
      * @param plate
      * @param color
