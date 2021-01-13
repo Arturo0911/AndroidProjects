@@ -16,7 +16,7 @@ def index():
     
     if request.method == "POST":
         print(request.json)
-        msg = Message('CAR SERVICE. Detail service', sender = 'negreirosarturod@gmail.com', recipients = [request.json['Email']])
+        msg = Message('CAR SERVICE. Detail service', sender = 'sapo@gmail.com', recipients = [request.json['Email']])
         msg.body = "Purchase: "+str(request.json['service'])+", by: "+str(request.json['Fullname'])
         mail.send(msg)
         return jsonify({
