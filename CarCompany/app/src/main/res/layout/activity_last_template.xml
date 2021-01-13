@@ -44,15 +44,57 @@
                         android:text="Service: Car washing"
                         android:textAppearance="?attr/textAppearanceHeadline6"
                         />
-                    <TextView
-                        android:id="@+id/fullName"
+                    <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:text="Arturo Negreiros Samanez"
-                        android:textAppearance="?attr/textAppearanceBody2"
-                        android:textColor="?android:attr/textColorSecondary"
-                        />
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="Order number: "
+                            android:textAppearance="?attr/textAppearanceBody2"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textColorHint="@color/colorPrimaryDark"
+                            />
+                        <TextView
+                            android:id="@+id/fullOrder"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="150dp"
+                            android:layout_marginTop="8dp"
+                            android:textStyle="bold"
+                            android:textAppearance="?attr/textAppearanceBody2"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textColorHint="@color/colorPrimaryDark"
+                            />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:id="@+id/fullName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="Arturo Negreiros Samanez"
+                            android:textAppearance="?attr/textAppearanceBody2"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textColorHint="@color/colorPrimaryDark"
+                            />
+                        <TextView
+                            android:id="@+id/fullCredentials"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="75dp"
+                            android:layout_marginTop="8dp"
+                            android:text="0918237421"
+                            android:textAppearance="?attr/textAppearanceBody2"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textColorHint="@color/colorPrimaryDark"
+                            />
+                    </LinearLayout>
                     <TextView
                         android:id="@+id/serviceDescription"
                         android:layout_width="wrap_content"
@@ -62,7 +104,33 @@
                         android:textAppearance="?attr/textAppearanceBody2"
                         android:textColor="?android:attr/textColorSecondary"
                         />
-
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="35dp"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:id="@+id/fullMake"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="car make chevrolet"
+                            android:textAppearance="?attr/textAppearanceBody2"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textColorHint="@color/colorPrimaryDark"
+                            />
+                        <TextView
+                            android:id="@+id/fullModel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="75dp"
+                            android:layout_marginTop="8dp"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textColorHint="@color/colorPrimaryDark"
+                            android:text="Model: Grand vitara"
+                            android:textAppearance="?attr/textAppearanceBody2"
+                            />
+                    </LinearLayout>
                 </LinearLayout>
 
                 <!-- Buttons -->
@@ -72,18 +140,21 @@
                     android:layout_margin="8dp"
                     android:orientation="horizontal">
                     <com.google.android.material.button.MaterialButton
+                        android:id="@+id/confirmOrder"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="8dp"
                         android:text="Confirm"
                         style="?attr/borderlessButtonStyle"
                         />
+
                     <com.google.android.material.button.MaterialButton
+                        android:id="@+id/deleteOrder"
+                        style="?attr/borderlessButtonStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Delete"
-                        style="?attr/borderlessButtonStyle"
-                        />
+                        android:onClick="onDeleteOrder"
+                        android:text="Delete" />
                 </LinearLayout>
 
             </LinearLayout>
