@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 String owLname = ownerLastname.getEditText().getText().toString();
                 String owCredential = ownerCredentials.getEditText().getText().toString();
 
-                vehicle.addToArray(plate, make,model,year,color, owName, owLname, owCredential);
+                vehicle.addToArray(plate, make,model,year,color, owName, owLname, owCredential, Vehicle.serviceType, Vehicle.imageName);
                 clearFields(carPlate, carMake, carModel,carYear, carColor, ownerName, ownerLastname, ownerCredentials);
                 Toast.makeText(MainActivity.this, "The fields was be saved successfully", Toast.LENGTH_SHORT).show();
             }else{

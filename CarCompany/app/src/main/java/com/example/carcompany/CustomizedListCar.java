@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -50,10 +51,32 @@ public class CustomizedListCar extends BaseAdapter {
 
         TextView plateCar = (TextView) convertView.findViewById(R.id.plateCar);
         TextView modelCar = (TextView) convertView.findViewById(R.id.modelCar);
+        TextView serviceCar = (TextView) convertView.findViewById(R.id.serviceCar);
+        TextView noOrder = (TextView) convertView.findViewById(R.id.noOrder);
 
 
-        plateCar.setText(carProperties.get(position).get(5));
-        modelCar.setText(carProperties.get(position).get(6));
+
+        ImageView imageCustomized = (ImageView) convertView.findViewById(R.id.imageCustomized);
+
+
+        /*
+        * [[plate, make,model,year,color, owName, owLname, owCredential, Vehicle.serviceType, Vehicle.imageName]]
+        * */
+
+        plateCar.setText("Plate: "+carProperties.get(position).get(0));
+        modelCar.setText(carProperties.get(position).get(2));
+        serviceCar.setText(carProperties.get(position).get(8));
+        noOrder.setText("Order number "+String.valueOf(position +1));
+
+
+
+        if (carProperties.get(position).get(8).equals("Car washing")){
+            imageCustomized.setImageResource(R.drawable.washing);
+        }else if (carProperties.get(position).get(8).equals("Car maintenance")){
+            imageCustomized.setImageResource(R.drawable.repair);
+        }else{
+            imageCustomized.setImageResource(R.drawable.paint);
+        }
 
         return convertView;
 

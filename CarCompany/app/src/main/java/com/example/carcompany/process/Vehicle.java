@@ -9,7 +9,11 @@ public class Vehicle {
 
 
     // this method gonna store the type of service such (car washing, car maintenance, car painting)
-    public static String serviceType;
+    // setting default car washing
+    public static String serviceType = "Car washing";
+
+    // wash     maintenance_2       paint_2
+    public static String imageName = "wash";
 
     /**
      * @param plate
@@ -22,8 +26,8 @@ public class Vehicle {
      * @param ownerLastname
      * */
     public void addToArray(String plate, String make,String model, String year,
-                           String color, String ownerName, String ownerLastname,String ownerCredential){
-        ArrayList<String> vector = new ArrayList<String>(Arrays.asList(plate, make, model, year, color, ownerName, ownerLastname, ownerCredential));
+                           String color, String ownerName, String ownerLastname,String ownerCredential, String service, String imgName){
+        ArrayList<String> vector = new ArrayList<String>(Arrays.asList(plate, make, model, year, color, ownerName, ownerLastname, ownerCredential, service, imgName));
 
         vehicleList.add(vector);
     }
