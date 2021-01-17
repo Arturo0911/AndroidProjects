@@ -1,6 +1,9 @@
 from flask import Flask
 from flask_mail import Mail, Message
 from flask import jsonify, request, Response
+from werkzeug.security import generate_password_hash, check_password_hash
+
+
 
 app = Flask(__name__)
 app.config['MAIL_SERVER']='smtp.gmail.com'
@@ -10,6 +13,39 @@ app.config['MAIL_PASSWORD'] = '**********************'
 app.config['MAIL_USE_TLS'] = False
 app.config['MAIL_USE_SSL'] = True
 mail = Mail(app)
+
+
+
+
+@app.route("/", methods=['GET','POST'])
+def index():
+    
+    if request.method = '':
+        
+        username = request.json['Username']
+        password = request.json['Password']
+        
+        try:
+            if username and password:
+                pass
+            else:
+        except Exception as e:
+
+            return jsonify({
+                    'status': str(e)
+                })
+
+
+
+    else:
+        pass
+
+
+
+
+
+
+
 
 @app.route("/android", methods=['GET','POST'])
 def index():
