@@ -55,7 +55,7 @@
                     android:orientation="vertical">
 
                     <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/userField"
+
                         android:layout_width="350dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="15dp"
@@ -68,13 +68,14 @@
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
                         <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/userField"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             />
 
                     </com.google.android.material.textfield.TextInputLayout>
                     <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/passField"
+
                         android:layout_width="350dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="15dp"
@@ -86,6 +87,7 @@
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
                         <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/passField"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             />
@@ -105,11 +107,12 @@
                         android:layout_width="350dp"
                         android:layout_height="55dp"
                         android:layout_marginStart="25dp"
-                        android:textStyle="bold"
-                        app:cornerRadius="?attr/dialogPreferredPadding"
+                        android:onClick="initLoginButton"
+                        android:text="@string/login_button"
                         android:textColor="@color/buttonsMain"
+                        android:textStyle="bold"
                         app:backgroundTint="@color/colorPrimaryDark"
-                        android:text="@string/login_button" />
+                        app:cornerRadius="?attr/dialogPreferredPadding" />
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="wrap_content"
