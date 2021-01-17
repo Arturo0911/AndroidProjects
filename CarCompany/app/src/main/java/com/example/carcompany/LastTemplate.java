@@ -6,6 +6,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -42,6 +43,8 @@ public class LastTemplate extends AppCompatActivity{
 
     private TextInputLayout email;
 
+    private ImageView finalImage;
+
     public void onDeleteOrder(View view){
         fullOrder = (TextView) findViewById(R.id.fullOrder);
         int index = Integer.parseInt(fullOrder.getText().toString());
@@ -71,9 +74,6 @@ public class LastTemplate extends AppCompatActivity{
             Toast.makeText(this, "the field email cannot be empty", Toast.LENGTH_SHORT).show();
         }
 
-
-
-
     }
 
 
@@ -91,6 +91,7 @@ public class LastTemplate extends AppCompatActivity{
         fullCredentials = (TextView)findViewById(R.id.fullCredentials);
         serviceDescription = (TextView)findViewById(R.id.serviceDescription);
         fullOrder = (TextView) findViewById(R.id.fullOrder);
+        finalImage = (ImageView) findViewById(R.id.finalImage);
 
         email = (TextInputLayout) findViewById(R.id.email);
 
@@ -110,6 +111,16 @@ public class LastTemplate extends AppCompatActivity{
         fullName.setText(valuesAdd.get(5)+" "+valuesAdd.get(6));
         fullCredentials.setText(valuesAdd.get(7));
         serviceDescription.setText("The plate car is "+valuesAdd.get(0)+".With this service you will have the best experience with us");
+
+        if(whichService.getText().toString().equals("Car washing")){
+            finalImage.setImageResource(R.drawable.wash);
+        }else if (whichService.getText().toString().equals("Car maintenance")){
+            finalImage.setImageResource(R.drawable.maintenance_2);
+        }else{
+            finalImage.setImageResource(R.drawable.paint_2);
+        }
+
+
 
     }
 
