@@ -19,18 +19,19 @@ mail = Mail(app)
 
 
 # route to login
-@app.route("/", methods=['POST'])
+@app.route("/api_android", methods=['GET','POST'])
 def index():
     
-    if request.method = 'POST':
+    if request.method == 'POST':
         
         username = request.json['Username']
         password = request.json['Password']
         
         try:
             if username  and password:
+                mongo.db.users.insert({})
                 
-                
+                return jsonify({'status code ': 200, 'status message': "data was saved successfully"})
 
 
             else:
@@ -41,7 +42,8 @@ def index():
                     'status': str(e)
                 })
     else:
-        pass
+        
+        return jsonify({'status message': "this is the GET method"})
 
 
 # route to signup
@@ -49,28 +51,13 @@ def index():
 def signup():
     
     if request.method == 'POST':
-
         try:
-            credentials = request.json['Credentials']
-            name = request.json['Name']
-            last_name = request.json['LastName']
-            email = request.json['Email']
-            phone_number = request.json['PhoneNumber']
-            address = request.json['Address']
             username = request.json['Username']
             password = generate_password_hash(request.json['Password']) # Saved password into the database
             object_id = mongo.db.users.insert({
-                'identification':credentials,
-                'names':name,
-                'last_name':last_name,
-                'email': email,
-                'phone_number':phone_number,
-                'address': address,
                 'username':username,
                 'password':password
                 })
-
-
             # after this one, the data will be saved into the db Mongo
             # object response
             response.jsonify({'message': 'saved successfully'})
@@ -89,7 +76,7 @@ def signup():
 
 
 @app.route("/android", methods=['GET','POST'])
-def index():
+def index_android():
     
     if request.method == "POST":
         print(request.json)
