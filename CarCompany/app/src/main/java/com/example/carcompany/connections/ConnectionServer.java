@@ -15,7 +15,8 @@ import org.json.JSONObject;
 
 public class ConnectionServer extends Activity {
 
-    private static final String url = "";
+    // to send directly to server created with Flask python
+    private static final String url = "http://" + "10.0.2.2"+":"+4000+"/android";
     RequestQueue requestQueue = null;
 
 
