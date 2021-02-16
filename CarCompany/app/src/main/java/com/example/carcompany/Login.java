@@ -18,7 +18,7 @@ public class Login extends AppCompatActivity {
 
     ActionBar actionBar;
 
-    // widgets
+
     private TextInputEditText userField;
     private TextInputEditText passField;
 
@@ -28,8 +28,6 @@ public class Login extends AppCompatActivity {
         passField = (TextInputEditText) findViewById(R.id.passField);
         ConnectionServer connection = new ConnectionServer();
 
-
-        // Make to String the fields
 
         String username = userField.getText().toString();
         String password = passField.getText().toString();
