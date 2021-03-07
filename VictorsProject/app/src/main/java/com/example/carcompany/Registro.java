@@ -175,8 +175,12 @@ public class Registro extends AppCompatActivity {
 
     public void onCancelButton(View view) {
 
-        Intent intent = new Intent(Registro.this, Login.class);
+        /*Intent intent = new Intent(Registro.this, Login.class);
+        startActivity(intent);*/
+
+        Intent intent = new Intent(Registro.this, Geolocation.class);
         startActivity(intent);
+
     }
 
     @Override

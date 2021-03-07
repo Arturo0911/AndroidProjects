@@ -50,7 +50,7 @@ public class Login extends AppCompatActivity {
                     AdminSQLite admin = new AdminSQLite(Login.this, "UsuariosEmpleados", null, 1);
                     SQLiteDatabase data = admin.getWritableDatabase();
                     /*@SuppressLint("Recycle") */
-                    @SuppressLint("Recycle") Cursor cursor  = data.rawQuery("select * from user_employee where usuario = '"+username+"' and clave = "+password, null);
+                    @SuppressLint("Recycle") Cursor cursor  = data.rawQuery("select * from user_employee where usuario = '"+username+"' and clave = '"+password+"'", null);
 
                     if (cursor.moveToFirst()){
                         Empleado.nombres = cursor.getString(2);

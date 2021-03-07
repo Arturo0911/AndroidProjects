@@ -139,8 +139,11 @@ public class LastTemplate extends AppCompatActivity{
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         Toast.makeText(getApplicationContext(), "Borrando...", Toast.LENGTH_LONG).show();
+                        ListControl.vehiculoLista.remove(index);
+                        Intent intent = new Intent(LastTemplate.this, MainActivity.class);
+                        startActivity(intent);
 
-                        if(ListControl.vehiculoLista.size()<=1){
+                        /*if(ListControl.vehiculoLista.size()<=1){
                             ListControl.vehiculoLista.remove(index);
                             Intent intent = new Intent(LastTemplate.this, MainActivity.class);
                             startActivity(intent);
@@ -148,7 +151,7 @@ public class LastTemplate extends AppCompatActivity{
                             ListControl.vehiculoLista.remove(index);
                             Intent intent = new Intent(LastTemplate.this, MainActivity.class);
                             startActivity(intent);
-                        }
+                        }*/
 
                     }
                 })
